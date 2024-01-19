@@ -42,7 +42,6 @@ class BottomNavWidget extends GetView<HomeController> {
             )),
             onTap: (){
               controller.currentIndex.value = index;
-              print(controller.currentIndex.value);
             },
           );
         },

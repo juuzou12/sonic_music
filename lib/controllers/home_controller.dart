@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:musicapp/sections/explore_section.dart';
 
 class HomeController {
   /*
@@ -14,11 +15,16 @@ class HomeController {
   * introduce a function / widget that uses switch case to display the widgets
   * based on the currentIndex
   * */
+  List<String> cardCategories = [
+    "Favourites","Outdoor","Indoor","Garden"
+  ];
+
+  RxString currentCardCategory="Favourites".obs;
 
   List bottomNavItems = [
     {
       "title":"Explore",
-      "icon":Icons.explore
+      "icon":Icons.explore,
     },
     {
       "title":"Cloud",
@@ -54,7 +60,7 @@ class HomeController {
         return Container(
           width: Get.width,
           height: Get.height,
-          color: Colors.black,
+          child:ExploreSection(),
         );
       case 1:
         return Container(
@@ -74,7 +80,6 @@ class HomeController {
           height: Get.height,
           color: Colors.blue,
         );
-
       case 4:
         return Container(
           width: Get.width,

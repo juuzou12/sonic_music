@@ -32,47 +32,11 @@ class PageTwo extends GetView<HomeController>{
           ),
         )),
       ),
-      // bottomNavigationBar: SizedBox(
-      //   width: Get.width,
-      //     height: 100,
-      //     child: BottomNavWidget()),
-      // body: Obx(() => controller.bottomNavBodyWidget ()),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.explore,color: Colors.black,)
-            ,label: "Explore",
-          ),
-          BottomNavigationBarItem(icon: Icon(Icons.cloud,color: Colors.black),label: "Cloud",),
-          BottomNavigationBarItem(icon: Icon(Icons.energy_savings_leaf,color: Colors.black),label: "Leaf"),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite_border,color: Colors.black),label: "Likes"),
-          BottomNavigationBarItem(icon: Icon(Icons.account_circle_outlined,color: Colors.black),label: "Account")
-        ],
-        onTap: (v){
-          print(v);
-          controller.currentIndex.value=v;
-          if (controller.c != null) {
-            controller.c!.jumpToPage(v);
-          }
-        },
-      ),
-      body: PageView(
-        controller: controller.c,
-        children: [
-        Container(
+      bottomNavigationBar: SizedBox(
         width: Get.width,
-        height: Get.height,
-        color: Colors.red,),
-        Container(
-        width: Get.width,
-        height: Get.height,
-        color: Colors.black,),
-        Container(
-        width: Get.width,
-        height: Get.height,
-        color: Colors.yellow,),
-        ],
-      ),
+          height: 100,
+          child: BottomNavWidget()),
+      body: Obx(() => controller.bottomNavBodyWidget ()),
     );}
 
 }
